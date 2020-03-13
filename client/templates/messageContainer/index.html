@@ -1,0 +1,7 @@
+<template name="messageContainer">
+    <div class="message-history">
+        {{#each messages}}
+        {{> message text=body}}
+      {{/each}}
+    </div>
+</template>
