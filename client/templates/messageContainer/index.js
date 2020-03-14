@@ -1,18 +1,12 @@
-import './index.html';
+import "./index.html";
+import { Messages } from "../footer";
+// import { Messages } from "../../../collections/messages";
 
-
-
-
-
+Template.messageContainer.onCreated(() => {});
 
 Template.messageContainer.helpers({
-    messages(){
-        return [{
-            body:'Hello everyone'
-        },{
-            body:'this is some awesome text'
-        },{
-            body:"this is some more awesome text"
-        }]
-    }
-})
+  messages() {
+    console.log(Messages.find().fetch(), "@@@messages");
+    return Messages.find().fetch();
+  }
+});
