@@ -6,7 +6,6 @@ Template.messageContainer.onCreated(() => {});
 
 Template.messageContainer.helpers({
   messages() {
-    console.log(Messages.find().fetch(), "@@@messages");
     return Messages.find().fetch();
   }
 });

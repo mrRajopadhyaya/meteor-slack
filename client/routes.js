@@ -1,7 +1,7 @@
 FlowRouter.route("/", {
   name: "root",
   action() {
-    BlazeLayout.render("HomeLayout", { main: "room" });
+    BlazeLayout.render("HomeLayout", { main: "MessengerArea" });
   }
 });
 
