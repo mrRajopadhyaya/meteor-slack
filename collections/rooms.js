@@ -23,12 +23,20 @@ RoomsSchema = new SimpleSchema({
     }
   },
   message: {
-    type: [Messages],
-    label: "Message"
+    type: Array,
+    label: "Message",
+    optional: true
+  },
+  "message.$": {
+    type: Messages
   },
   participants: {
     type: Array,
-    label: "Participants"
+    label: "Participants",
+    optional: true
+  },
+  "participants.$": {
+    type: String
   },
   type: {
     type: String,

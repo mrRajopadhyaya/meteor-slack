@@ -1,10 +1,10 @@
 <template name="userList">
   <div class="">
-    {{#each name}}
-    <span class="users">
-      <li>{{address}}</li>
+    <span class="users" id="username">
+      {{#each email in user.emails}}
+      <li>{{user.emails}}</li>
+      {{/each}}
     </span>
     <!-- <li>{{ address }}</li> -->
-    {{/each}}
   </div>
 </template>

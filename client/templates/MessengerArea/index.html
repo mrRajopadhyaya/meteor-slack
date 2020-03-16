@@ -83,7 +83,9 @@
     </div>
     <div class="users-list margin-left-20">
       <h4>online users</h4>
-      {{#each usersList}} {{> userList name=emails}} {{/each}}
+      <!-- <div id="username"> -->
+      {{#each user in usersList}} {{> userList user=user}} {{/each}}
+      <!-- </div> -->
     </div>
   </div>
 </template>

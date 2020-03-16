@@ -12,12 +12,8 @@ import "./templates/MessengerArea";
 import "./templates/message";
 import "./templates/UsersList";
 import "./routes";
+import "./subscription";
 
-Meteor.subscribe("allMessages", {
-  onReady: function() {
-    // console.log(Messages.find().fetch(), "message data");
-  }
-});
 // console.log(Messages.find().fetch(), "@@@@messages");
 
 Template.HomeLayout.onCreated(function() {
