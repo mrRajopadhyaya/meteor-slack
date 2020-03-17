@@ -1,32 +1,20 @@
 import "./index.html";
-export const Rooms = new Mongo.Collection("rooms");
-Template.userList.onCreated(() => {});
+// export const Rooms = new Mongo.Collection("rooms");
+Template.userList.onCreated(() => {
+  console.log(Template.instance(), "@@@user inside oncreated..");
+});
 
-Template.userList.events({
-  "click #username": function(events, template) {
-    Rooms.insert(
-      {
-        name: this.user.emails[0].address,
-
-        // prettier-ignore
-        '$push': {
-          'participants.$': "test1"
-        }
-      },
-      function(error, res) {
-        console.log(error, "@@insert error");
-        console.log(res, "@@insert res");
-      }
-    );
-    console.log(this, "@@@this");
+Template.userList.helpers({
+  emails() {
+    return Template.instance().data.user.emails[0].address;
   }
 });
 
-/*
-{
-        // push block - add message array element
-        $push: {
-          participants: {
-            $each: ["test", "test1"]
-          }
-        }*/
+Template.userList.events({
+  "click #username": function(events, template) {
+    Meteor.call("showData", this.user, (error, response) => {
+      console.log(response, "@@response");
+      console.log(error, "@@error");
+    });
+  }
+});

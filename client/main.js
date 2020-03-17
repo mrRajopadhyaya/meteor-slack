@@ -14,8 +14,4 @@ import "./templates/UsersList";
 import "./routes";
 import "./subscription";
 
-// console.log(Messages.find().fetch(), "@@@@messages");
-
-Template.HomeLayout.onCreated(function() {
-  // console.log(Messages.find().fetch(), "client Message");
-});
+Template.HomeLayout.onCreated(function() {});
