@@ -12,7 +12,7 @@ const Message = Class.create({
     createdBy: {
       type: String,
       default() {
-        return this.userId();
+        return Meteor.userId;
       }
     },
     createdAt: {

@@ -16,7 +16,7 @@ const Room = Class.create({
     createdBy: {
       type: String,
       default() {
-        return Meteor.userId();
+        return Meteor.userId;
       }
     },
     createdAt: {

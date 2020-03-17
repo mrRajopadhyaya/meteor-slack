@@ -1,8 +1,6 @@
 import "./index.html";
 // export const Rooms = new Mongo.Collection("rooms");
-Template.userList.onCreated(() => {
-  console.log(Template.instance(), "@@@user inside oncreated..");
-});
+Template.userList.onCreated(() => {});
 
 Template.userList.helpers({
   emails() {

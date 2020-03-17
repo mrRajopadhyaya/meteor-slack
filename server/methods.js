@@ -1,5 +1,6 @@
 import Room from "../imports/Model/Room";
 import Rooms from "../imports/collections/rooms";
+import Message from "../imports/Model/Message";
 
 Meteor.methods({
   showData(user) {
@@ -13,5 +14,12 @@ Meteor.methods({
       room.participants.push(Meteor.userId());
       room.save();
     }
+  },
+  getMessageHistory(roomId) {
+    console.log("here..");
+    const messages = Message.find({ roomId }).fetch();
+    console.log(messages, "@@messages");
+    // return Message.find({ roomId });
+    return messages;
   }
 });
