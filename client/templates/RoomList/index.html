@@ -1,7 +1,7 @@
 <template name="RoomList">
   <div id="contacts">
     <ul>
-      {{#each Rooms}} {{> room title=name id=_id}} {{/each}}
+      {{#each roomdata in Rooms}} {{> room roomData=roomdata}} {{/each}}
     </ul>
   </div>
 </template>

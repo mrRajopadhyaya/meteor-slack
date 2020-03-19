@@ -10,7 +10,7 @@ Template.userList.helpers({
 
 Template.userList.events({
   "click #username": function(events, template) {
-    Meteor.call("showData", this.user, (error, response) => {
+    Meteor.call("createRoom", this.user, (error, response) => {
       console.log(response, "@@response");
       console.log(error, "@@error");
     });

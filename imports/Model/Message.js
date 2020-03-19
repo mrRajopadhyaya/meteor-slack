@@ -5,21 +5,20 @@ const Message = Class.create({
   name: "Message",
   collection: Messages,
   secured: false,
+  behaviors: {
+    timestamp: {
+      hasCreatedField: true,
+      createdFieldName: "createdAt",
+      hasUpdatedField: true,
+      updatedFieldName: "updatedAt"
+    }
+  },
   fields: {
     body: {
       type: String
     },
     createdBy: {
-      type: String,
-      default() {
-        return Meteor.userId;
-      }
-    },
-    createdAt: {
-      type: Date,
-      default() {
-        return Date.now();
-      }
+      type: String
     },
     seen: {
       type: Boolean,

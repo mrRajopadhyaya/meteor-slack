@@ -5,7 +5,7 @@ Template.RoomList.helpers({
     return Meteor.users.find().fetch();
   },
   Rooms() {
-    console.log(Rooms.find().fetch(), "@@@@Rooms");
-    return Rooms.find().fetch();
+    console.log(Rooms.find().fetch(), "@@@room ko list");
+    return Rooms.find().fetch(); //rooms.find({participants:{$in:['BMoqLtkKhsXDjSCaF']}})
   }
 });

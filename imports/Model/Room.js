@@ -9,31 +9,27 @@ const Room = Class.create({
   name: "Room",
   collection: Rooms,
   secured: false,
+  behaviors: {
+    timestamp: {
+      hasCreatedField: true,
+      createdFieldName: "createdAt",
+      hasUpdatedField: true,
+      updatedFieldName: "updatedAt"
+    }
+  },
   fields: {
     name: {
-      type: String
+      type: [String]
     },
     createdBy: {
-      type: String,
-      default() {
-        return Meteor.userId;
-      }
-    },
-    createdAt: {
-      type: Date,
-      default() {
-        return Date.now();
-      }
+      type: String
     },
     message: {
       type: [Message],
       optional: true
     },
     participants: {
-      type: [String],
-      default() {
-        return [Meteor.userId()];
-      }
+      type: [String]
     },
     type: {
       type: String,

@@ -10,5 +10,5 @@ Meteor.publish("allUsers", function() {
 });
 
 Meteor.publish("allRooms", function() {
-  return Rooms.find({ createdBy: this.userId });
+  return Rooms.find({ participants: { $in: [Meteor.userId()] } });
 });
